@@ -27,3 +27,14 @@ footer {
     bottom: 0;
     width: 100%;
 }
+li {
+    display: inline;
+    margin-right: 10px;  
+}
+li a {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: black;
+    padding: 5px;
+    border-radius: 5px;
+}

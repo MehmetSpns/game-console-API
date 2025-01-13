@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +14,13 @@
     <main>
         <h2>API Endpoints</h2>
         <ul>
-            <li><a href="/api/games">/api/games</a></li>
-            <li><a href="/api/consoles">/api/consoles</a></li>
+            <li><a href="/api/games">games</a></li>
+            <li><a href="/api/consoles">consoles</a></li>
         </ul>
+        <h2>Fetch data using JavaScript:</h2>
+        <button onclick="fetchGames()">Fetch Games</button>
+        <button onclick="fetchConsoles()">Fetch Consoles</button>
+        <pre id="output"></pre>
     </main>
     <footer>
         <p>&copy; 2025 Game Console API</p>
