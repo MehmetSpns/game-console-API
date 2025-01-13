@@ -20,8 +20,8 @@ const gameModel = sequelize.define('Game', {
     allowNull: true,
   },
 }, {
-  tableName: 'games', // Use this to match the table name in your database
-  timestamps: false,  // Disable createdAt and updatedAt fields
+  tableName: 'games', 
+  timestamps: false,  
 });
 
 module.exports = gameModel;

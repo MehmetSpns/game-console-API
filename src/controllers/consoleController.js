@@ -14,7 +14,7 @@ exports.getConsoles = async (req, res) => {
     }
 };
 
-exports.createConsole = async (req, res) => {
+exports.postConsole = async (req, res) => {
     const { name, manufacturer, release_year } = req.body;
     
     if (!name || !manufacturer || !release_year) {
@@ -37,7 +37,7 @@ exports.createConsole = async (req, res) => {
     }
 };
 
-exports.updateConsole = async (req, res) => {
+exports.putConsole = async (req, res) => {
     const { name, manufacturer, release_year } = req.body;
     
     try {

@@ -7,33 +7,120 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
     <header>
-        <h1>API Documentation</h1>
+        <h1>API Endpoints Documentation</h1>
     </header>
 
     <main>
-        <h2>Games</h2>
+        <h2>Console Endpoints</h2>
         <ul>
-            <li>GET /api/games - List all games</li>
-            <li>GET /api/games/:id - Get a specific game</li>
-            <li>POST /api/games - Create a new game</li>
-            <li>PUT /api/games/:id - Update an existing game</li>
-            <li>DELETE /api/games/:id - Delete a game</li>
-            <li>GET /api/games/search - Search games by title or genre</li>
+            <li>
+                <strong>GET /consoles</strong>
+                <p>Retrieves a list of all consoles with optional limit, offset, and sort order.</p>
+                <p>Query Parameters: <code>?limit=10&offset=0&sort=desc</code></p>
+                <p>Sort Order: 
+                    <ul>
+                        <li><code>asc</code> for ascending order (e.g., alphabetical or numerical from low to high)</li>
+                        <li><code>desc</code> for descending order (e.g., alphabetical or numerical from high to low)</li>
+                    </ul>
+                </p>
+                <p>Response: <code>200 OK</code> with list of consoles.</p>
+            </li>
+            <li>
+                <strong>GET /consoles/:id</strong>
+                <p>Retrieve details of a specific console by ID.</p>
+                <p>Response: <code>200 OK</code> with console details or <code>404 Not Found</code> if not found.</p>
+            </li>
+            <li>
+                <strong>POST /consoles</strong>
+                <p>Create a new console.</p>
+                <p>Request Body:
+                    <pre>{
+                        "name": "PlayStation",
+                        "manufacturer": "Sony",
+                        "release_year": 1994
+                    }</pre>
+                </p>
+                <p>Response: <code>201 Created</code> with the created console.</p>
+            </li>
+            <li>
+                <strong>PUT /consoles/:id</strong>
+                <p>Update an existing console.</p>
+                <p>Request Body:
+                    <pre>{
+                        "name": "PlayStation 5",
+                        "manufacturer": "Sony",
+                        "release_year": 2020
+                    }</pre>
+                </p>
+                <p>Response: <code>200 OK</code> with updated console or <code>404 Not Found</code> if not found.</p>
+            </li>
+            <li>
+                <strong>DELETE /consoles/:id</strong>
+                <p>Delete a console by ID.</p>
+                <p>Response: <code>204 No Content</code> if successfully deleted, or <code>404 Not Found</code> if not found.</p>
+            </li>
         </ul>
 
-        <h2>Consoles</h2>
+        <h2>Game Endpoints</h2>
         <ul>
-            <li>GET /api/consoles - List all consoles</li>
-            <li>GET /api/consoles/:id - Get a specific console</li>
-            <li>POST /api/consoles - Create a new console</li>
-            <li>PUT /api/consoles/:id - Update an existing console</li>
-            <li>DELETE /api/consoles/:id - Delete a console</li>
+            <li>
+                <strong>GET /games</strong>
+                <p>Retrieve a list of all games with optional limit, offset, sort order, and search parameters.</p>
+                <p>Query Parameters: <code>?limit=10&offset=0&sort=desc</code></p>
+                <p>Sort Order: 
+                    <ul>
+                        <li><code>asc</code> for ascending order (e.g., alphabetical or numerical from low to high)</li>
+                        <li><code>desc</code> for descending order (e.g., alphabetical or numerical from high to low)</li>
+                    </ul>
+                </p>
+                <p>Response: <code>200 OK</code> with list of games.</p>
+            </li>
+            <li>
+                <strong>GET /games/:id</strong>
+                <p>Retrieve details of a specific game by ID.</p>
+                <p>Response: <code>200 OK</code> with game details or <code>404 Not Found</code> if not found.</p>
+            </li>
+            <li>
+                <strong>POST /games</strong>
+                <p>Create a new game.</p>
+                <p>Request Body:
+                    <pre>{
+                        "title": "The Last of Us",
+                        "genre": "Action",
+                        "release_year": 2013,
+                        "console_id": 1
+                    }</pre>
+                </p>
+                <p>Response: <code>201 Created</code> with the created game.</p>
+            </li>
+            <li>
+                <strong>PUT /games/:id</strong>
+                <p>Update an existing game.</p>
+                <p>Request Body:
+                    <pre>{
+                        "title": "The Last of Us Part II",
+                        "genre": "Action",
+                        "release_year": 2020,
+                        "console_id": 1
+                    }</pre>
+                </p>
+                <p>Response: <code>200 OK</code> with updated game or <code>404 Not Found</code> if not found.</p>
+            </li>
+            <li>
+                <strong>DELETE /games/:id</strong>
+                <p>Delete a game by ID.</p>
+                <p>Response: <code>204 No Content</code> if successfully deleted, or <code>404 Not Found</code> if not found.</p>
+            </li>
+            <li>
+                <strong>GET /games/search</strong>
+                <p>Search games by title and/or genre.</p>
+                <p>Query Parameters: <code>?title=Last&genre=Action</code></p>
+                <p>Response: <code>200 OK</code> with filtered games list.</p>
+            </li>
         </ul>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Game Console API. All rights reserved.</p>
-    </footer>
 </body>
 </html>
