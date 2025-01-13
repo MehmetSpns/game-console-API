@@ -67,16 +67,6 @@ DB_PASSWORD=yourpassword
 DB_NAME=game_console_api
 ```
 
-### 5. Run database migrations
-
-Use Sequelize CLI to set up the necessary tables in the database. Run the following command to apply the migrations:
-
-```bash
-npx sequelize-cli db:migrate
-```
-
-This will create the required tables in your MySQL database.
-
 ### 6. Start the server
 
 You can start the server using one of the following commands:
