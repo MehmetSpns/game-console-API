@@ -69,3 +69,16 @@ exports.deleteConsole = async (req, res) => {
         res.status(500).json({ error: "Failed to delete this console" });
     }
 };
+
+exports.getConsoleById = async (req, res) => {
+    try {
+        const console = await Console.findByPk(req.params.id);
+        if (!console) {
+            return res.status(404).json({ error: "Console not found" });
+        }
+        res.status(200).json(console);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to fetch console details" });
+    }
+};
+

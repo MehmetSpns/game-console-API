@@ -2,31 +2,26 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 const Console = require('./console'); 
 
-const gameModel = sequelize.define('game', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-  },
+const gameModel = sequelize.define('Game', {
   title: {
     type: DataTypes.STRING,
     allowNull: false,
   },
   genre: {
     type: DataTypes.STRING,
+    allowNull: true,
   },
   release_year: {
     type: DataTypes.INTEGER,
+    allowNull: true,
   },
   console_id: {
     type: DataTypes.INTEGER,
-    references: {
-      model: Console,
-      key: 'id',
-    },
+    allowNull: true,
   },
 }, {
-  tableName: 'games',  
+  tableName: 'games', // Use this to match the table name in your database
+  timestamps: false,  // Disable createdAt and updatedAt fields
 });
 
 module.exports = gameModel;

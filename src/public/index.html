@@ -1,30 +1,39 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Console API</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>API Documentation</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to the Game Console API</h1>
+        <h1>API Documentation</h1>
     </header>
+
     <main>
-        <h2>API Endpoints</h2>
+        <h2>Games</h2>
         <ul>
-            <li><a href="/api/games">games</a></li>
-            <li><a href="/api/consoles">consoles</a></li>
+            <li>GET /api/games - List all games</li>
+            <li>GET /api/games/:id - Get a specific game</li>
+            <li>POST /api/games - Create a new game</li>
+            <li>PUT /api/games/:id - Update an existing game</li>
+            <li>DELETE /api/games/:id - Delete a game</li>
+            <li>GET /api/games/search - Search games by title or genre</li>
         </ul>
-        <h2>Fetch data using JavaScript:</h2>
-        <button onclick="fetchGames()">Fetch Games</button>
-        <button onclick="fetchConsoles()">Fetch Consoles</button>
-        <pre id="output"></pre>
+
+        <h2>Consoles</h2>
+        <ul>
+            <li>GET /api/consoles - List all consoles</li>
+            <li>GET /api/consoles/:id - Get a specific console</li>
+            <li>POST /api/consoles - Create a new console</li>
+            <li>PUT /api/consoles/:id - Update an existing console</li>
+            <li>DELETE /api/consoles/:id - Delete a console</li>
+        </ul>
     </main>
+
     <footer>
-        <p>&copy; 2025 Game Console API</p>
+        <p>&copy; 2025 Game Console API. All rights reserved.</p>
     </footer>
-    <script src="./js/script.js"></script>
 </body>
 </html>
